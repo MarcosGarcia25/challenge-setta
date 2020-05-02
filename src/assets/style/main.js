@@ -17,7 +17,7 @@ export default StyleSheet.create({
         elevation: 3,
         justifyContent: 'center',
         alignItems: 'center',
-        marginVertical: 5
+        marginVertical: 10
     },
     textButtomPrimary: {
         fontSize: 16,
