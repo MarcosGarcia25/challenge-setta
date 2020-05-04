@@ -21,12 +21,12 @@ function App(props) {
     const [toggle, setToggle] = useState(false)
     const [animationValue, setAnimationValue] = useState(new Animated.Value(dimensions.width - 30))
     const [animationCircleValue, setAnimationCircleValue] = useState(new Animated.Value(0))
-    const [animationCircleOpacityValue, setAnimationCircleOpacityValue] = useState(new Animated.Value(1))
+    const [animationCircleOpacityValue, setAnimationCircleOpacityValue] = useState(new Animated.Value(0))
 
     function navigateToInfoUser() {
         Animated.timing(animationValue, {
             toValue: 60,
-            timing: 500
+            duration: 500
         }).start(setToggle(true));
 
         setTimeout(() => {
@@ -36,8 +36,8 @@ function App(props) {
             }).start();
 
             Animated.timing(animationCircleOpacityValue, {
-                toValue: 0,
-                duration: 3000
+                toValue: 1,
+                duration: 300
             }).start();
 
             setTimeout(() => {
@@ -50,7 +50,7 @@ function App(props) {
         getData()
 
         Animated.timing(animationCircleOpacityValue, {
-            toValue: 1,
+            toValue: 0,
             duration: 750
         }).start();
 
