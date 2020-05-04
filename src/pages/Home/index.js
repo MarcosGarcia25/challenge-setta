@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Text, View, TouchableOpacity, Dimensions, ActivityIndicator, Animated, AsyncStorage } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+
 import ModalData from './components/modal'
 import ViewExplosion from './components/ViewExplosion'
 
@@ -9,19 +10,18 @@ const dimensions = Dimensions.get('screen')
 
 function App(props) {
 
-    const navigation = useNavigation()
-
     const [user, setUser] = useState(null)
-
-    useEffect(() => {
-        getData()
-    }, [])
-
     const [modal, setModal] = useState(false)
     const [toggle, setToggle] = useState(false)
     const [animationValue, setAnimationValue] = useState(new Animated.Value(dimensions.width - 30))
     const [animationCircleValue, setAnimationCircleValue] = useState(new Animated.Value(0))
     const [animationCircleOpacityValue, setAnimationCircleOpacityValue] = useState(new Animated.Value(0))
+    
+    const navigation = useNavigation()
+
+    useEffect(() => {
+        getData()
+    }, [])
 
     function navigateToInfoUser() {
         Animated.timing(animationValue, {
@@ -65,10 +65,7 @@ function App(props) {
             duration: 750
         }).start();
 
-        setTimeout(() => {
-            
-            setToggle(false)
-        }, 600)
+        setTimeout(() => setToggle(false), 600)
     }
 
     async function getData() {
@@ -81,12 +78,11 @@ function App(props) {
             date = `${date[2]}-${date[1]}-${date[0]}`
             const date1 = new Date(date)
             const date2 = new Date()
-            const diffDays = Math.ceil(Math.abs(date2 - date1) / (1000 * 3600 * 24))
+            const days = Math.ceil(Math.abs(date2 - date1) / (1000 * 3600 * 24))
 
-            setUser({ ...user, age: Math.floor(diffDays / 365) })
+            setUser({ ...user, age: Math.floor(days / 365) })
         }
     }
-
 
     return (
         <>
@@ -109,8 +105,10 @@ function App(props) {
                     <Animated.View
                         style={[MainStyle.buttomPrimary, { width: animationValue, alignSelf: 'center', }]}
                     >
-                        {!toggle ? <Text style={MainStyle.textButtomPrimary}>{user ? 'Editar' : 'Inserir'} dados do usuário</Text> :
-                            <ActivityIndicator size="small" color="#FFF" />}
+                        {!toggle ? 
+                            <Text style={MainStyle.textButtomPrimary}>{user ? 'Editar' : 'Inserir'} dados do usuário</Text> :
+                            <ActivityIndicator size="small" color="#FFF" />
+                        }
                     </Animated.View>
                 </TouchableOpacity>
 
