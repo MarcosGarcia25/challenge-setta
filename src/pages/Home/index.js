@@ -6,6 +6,7 @@ import ModalData from './components/modal'
 import ViewExplosion from './components/ViewExplosion'
 
 import MainStyle from '../../assets/style/main'
+import Functions from '../../utils/functions'
 const dimensions = Dimensions.get('screen')
 
 function App(props) {
@@ -74,11 +75,7 @@ function App(props) {
         if (userData) {
             const user = JSON.parse(userData)
 
-            let date = user.birthDate.split('/')
-            date = `${date[2]}-${date[1]}-${date[0]}`
-            const date1 = new Date(date)
-            const date2 = new Date()
-            const days = Math.ceil(Math.abs(date2 - date1) / (1000 * 3600 * 24))
+            const days = Functions.dateDifference(user.birthDate)
 
             setUser({ ...user, age: Math.floor(days / 365) })
         }
