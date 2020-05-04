@@ -2,7 +2,7 @@
 
 ## Sobre
 
-Projeto desenvolvido como teste de conhecimento da bibliotaca React Native.
+Projeto desenvolvido como teste de conhecimento da biblioteca React Native.
 
 ## Execução
 
