@@ -62,14 +62,14 @@ function App(props) {
 
         Animated.timing(animationValue, {
             toValue: dimensions.width - 30,
-            delay: 1000,
+            delay: 100,
             duration: 750
         }).start();
 
         setTimeout(() => {
             
             setToggle(false)
-        }, 1300)
+        }, 600)
     }
 
     async function getData() {
@@ -110,7 +110,7 @@ function App(props) {
                     <Animated.View
                         style={[MainStyle.buttomPrimary, { width: animationValue, alignSelf: 'center', }]}
                     >
-                        {!toggle ? <Text style={MainStyle.textButtomPrimary}>Inserir dados do usuário</Text> :
+                        {!toggle ? <Text style={MainStyle.textButtomPrimary}>{user ? 'Editar' : 'Inserir'} dados do usuário</Text> :
                             <ActivityIndicator size="small" color="#FFF" />}
                     </Animated.View>
                 </TouchableOpacity>
