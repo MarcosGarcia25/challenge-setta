@@ -73,11 +73,11 @@ function App(props) {
         const userData = await AsyncStorage.getItem('user')
 
         if (userData) {
-            const user = JSON.parse(userData)
+            const objectUser = JSON.parse(userData)
 
-            const days = Functions.dateDifference(user.birthDate)
+            const days = Functions.dateDifference(objectUser.birthDate)
 
-            setUser({ ...user, age: Math.floor(days / 365) })
+            setUser({ ...objectUser, age: Math.floor(days / 365) })
         }
     }
 

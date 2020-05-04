@@ -44,10 +44,10 @@ function App(props) {
         console.log(userData)
 
         if (userData) {
-            const user = JSON.parse(userData)
-            setPhoto(user.photo)
-            setName(user.name)
-            setBirthDate(user.birthDate)
+            const objectUser = JSON.parse(userData)
+            setPhoto(objectUser.photo)
+            setName(objectUser.name)
+            setBirthDate(objectUser.birthDate)
         }
     }
 
