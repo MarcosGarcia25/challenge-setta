@@ -23,7 +23,7 @@ function Rooutes() {
                     name="InfoUser"
                     component={InfoUserScreen}
                     options={{
-                        headerTitle: props => <Text style={{fontSize: 20}}>Dados do usuário</Text>,
+                        headerShown: false
                     }}
                 />
             </Stack.Navigator>

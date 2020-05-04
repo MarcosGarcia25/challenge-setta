@@ -17,10 +17,17 @@ export default StyleSheet.create({
         elevation: 3,
         justifyContent: 'center',
         alignItems: 'center',
-        marginVertical: 10
+        marginVertical: 10,
     },
     textButtomPrimary: {
         fontSize: 16,
         color: '#fff'
+    },
+    fieldInput: {
+        backgroundColor: '#EEE',
+        borderRadius: 100,
+        padding: 15,
+        elevation: 3,
+        marginVertical: 5
     }
 });
