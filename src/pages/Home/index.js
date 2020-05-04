@@ -17,7 +17,6 @@ function App(props) {
         getData()
     }, [])
 
-    const [percentage, setPercentage] = useState(null)
     const [modal, setModal] = useState(false)
     const [toggle, setToggle] = useState(false)
     const [animationValue, setAnimationValue] = useState(new Animated.Value(dimensions.width - 30))

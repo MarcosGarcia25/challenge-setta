@@ -5,10 +5,6 @@ import { useNavigation } from '@react-navigation/native';
 import { FontAwesome } from '@expo/vector-icons';
 import { TextInputMask } from 'react-native-masked-text'
 
-const dimensions = Dimensions.get('screen')
-
-import Modal from 'react-native-modal'
-
 import MainStyle from '../../assets/style/main'
 
 function App(props) {
