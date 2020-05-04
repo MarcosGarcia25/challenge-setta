@@ -3,6 +3,8 @@ import { Text, View, ScrollView, Image} from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import Modal from 'react-native-modal'
 
+import MainStyle from '../../../assets/style/main'
+
 function ModalData(props) {
 
     const {user, modal, setModal} = props
@@ -45,13 +47,7 @@ function ModalData(props) {
                 borderTopStartRadius: 15
             }}>
                 <View
-                    style={{
-                        borderTopEndRadius: 15,
-                        borderTopStartRadius: 15,
-                        padding: 10,
-                        flexDirection: 'row',
-                        alignItems: 'center'
-                    }}
+                    style={MainStyle.header}
                 >
                     <FontAwesome
                         name="angle-down"
@@ -63,12 +59,7 @@ function ModalData(props) {
                         }}
                     />
                     <View
-                        style={{
-                            flex: 1,
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            marginLeft: -42
-                        }}
+                        style={MainStyle.headerContent}
                     >
                         <Text>DADOS DO USUÁRIO</Text>
                     </View>
@@ -84,12 +75,7 @@ function ModalData(props) {
                         marginVertical: 25
                     }}>
                         <Image
-                            style={{
-                                width: 150,
-                                height: 150,
-                                borderRadius: 100,
-                                alignSelf: 'center'
-                            }}
+                            style={MainStyle.avatar}
                             source={{
                                 uri: user.photo,
                             }}

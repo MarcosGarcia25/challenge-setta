@@ -87,27 +87,13 @@ function App(props) {
                 onPress={() => pickImage()}
             >
                 {photo ? <Image
-                    style={{
-                        width: 150,
-                        height: 150,
-                        borderRadius: 100,
-                        alignSelf: 'center'
-                    }}
+                    style={MainStyle.avatar}
                     source={{
                         uri: photo,
                     }}
                 /> :
                     <View
-                        style={{
-                            width: 150,
-                            height: 150,
-                            borderRadius: 100,
-                            alignSelf: 'center',
-                            backgroundColor: '#CCC',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            elevation: 3
-                        }}
+                        style={MainStyle.placeholderAvatar}
                     >
                         <FontAwesome
                             name="camera"

@@ -29,5 +29,35 @@ export default StyleSheet.create({
         padding: 15,
         elevation: 3,
         marginVertical: 5
-    }
+    },
+    placeholderAvatar: {
+        width: 150,
+        height: 150,
+        borderRadius: 100,
+        alignSelf: 'center',
+        backgroundColor: '#CCC',
+        justifyContent: 'center',
+        alignItems: 'center',
+        elevation: 3
+    },
+    avatar: {
+        width: 150,
+        height: 150,
+        borderRadius: 100,
+        alignSelf: 'center'
+    },
+    header: {
+        borderTopEndRadius: 15,
+        borderTopStartRadius: 15,
+        padding: 10,
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    headerContent: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginLeft: -42
+    },
+
 });
